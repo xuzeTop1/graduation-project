@@ -1,4 +1,5 @@
 const output = document.getElementById('output');
+const API_BASE_URL = window.__API_BASE_URL__ || 'http://127.0.0.1:3000';
 
 const render = async () => {
   if (!output) {
@@ -6,7 +7,7 @@ const render = async () => {
   }
 
   try {
-    const response = await fetch('http://127.0.0.1:3000/api/message');
+    const response = await fetch(`${API_BASE_URL}/api/message`);
 
     if (!response.ok) {
       throw new Error(`请求失败(${response.status})`);

@@ -2,11 +2,12 @@ const http = require('http');
 
 const PORT = parseInt(process.env.PORT, 10) || 3000;
 const HOST = process.env.HOST || '127.0.0.1';
+const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || 'http://127.0.0.1:8080';
 
 const sendJson = (res, statusCode, data) => {
   res.writeHead(statusCode, {
     'Content-Type': 'application/json; charset=utf-8',
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
     'Access-Control-Allow-Methods': 'GET,OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
   });
@@ -16,7 +17,7 @@ const sendJson = (res, statusCode, data) => {
 const requestListener = (req, res) => {
   if (req.method === 'OPTIONS') {
     res.writeHead(204, {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
       'Access-Control-Allow-Methods': 'GET,OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
     });
