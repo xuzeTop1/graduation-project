@@ -1,0 +1,7 @@
+interface:
+  display_name: "毕业设计全栈助手"
+  short_description: "辅助计算机毕业设计的代码审查、架构图、功能规格、测试用例与论文写作"
+  default_prompt: "Use $graduation-project-assistant to analyze my graduation project code and generate architecture, requirements, tests, or thesis materials."
+
+policy:
+  allow_implicit_invocation: true
