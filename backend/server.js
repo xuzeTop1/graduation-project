@@ -1,6 +1,10 @@
 const http = require('http');
 
-const PORT = parseInt(process.env.PORT, 10) || 3000;
+const rawPort = Number(process.env.PORT);
+const PORT =
+  Number.isInteger(rawPort) && rawPort > 0 && rawPort <= 65535
+    ? rawPort
+    : 3000;
 const HOST = process.env.HOST || '127.0.0.1';
 const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || 'http://127.0.0.1:8080';
 

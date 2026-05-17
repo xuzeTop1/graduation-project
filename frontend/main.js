@@ -1,7 +1,7 @@
 const output = document.getElementById('output');
 const API_BASE_URL = window.__API_BASE_URL__ || 'http://127.0.0.1:3000';
 
-const render = async () => {
+const loadApiData = async () => {
   if (!output) {
     return;
   }
@@ -20,4 +20,4 @@ const render = async () => {
   }
 };
 
-render();
+loadApiData();
