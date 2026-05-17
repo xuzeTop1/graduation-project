@@ -1,6 +1,6 @@
 const http = require('http');
 
-const PORT = Number(process.env.PORT || 3000);
+const PORT = parseInt(process.env.PORT, 10) || 3000;
 const HOST = process.env.HOST || '127.0.0.1';
 
 const sendJson = (res, statusCode, data) => {
