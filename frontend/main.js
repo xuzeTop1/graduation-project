@@ -16,7 +16,7 @@ const loadApiData = async () => {
     const data = await response.json();
     output.textContent = JSON.stringify(data, null, 2);
   } catch (error) {
-    output.textContent = `请求失败: ${error.message}`;
+    output.textContent = `请求失败(${API_BASE_URL}/api/message): ${error.message}`;
   }
 };
 
