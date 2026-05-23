@@ -1,0 +1,10 @@
+{
+  "name": "graduation-project-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend/backend separation demo",
+  "scripts": {
+    "start:backend": "node ./backend/server.js",
+    "test:backend": "node --test ./backend/server.test.js"
+  }
+}
